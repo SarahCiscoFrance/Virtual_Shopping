@@ -1,0 +1,46 @@
+<!-- <form action="/" method="post"> -->
+<!-- <button class="btn view-article" type="submit">View product</button> -->
+<!-- <input type="hidden" name="productId" value="<%= product._id %>"> -->
+<!-- </form> -->
+<button type="button" class="btn" onclick="display_confirm_modal()">View product</button>
+<div id="confirm-modal" class="modal" style="display: none">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div style="display: flex; flex-direction: row-reverse">
+                    <button type="button" onclick="display_confirm_modal()" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <h4 class="modal-title">Warning</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to contact a seller ?&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="display_confirm_modal()" class="btn danger" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn" onclick="location.href='/view-product'">Confirm</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--Scripts-->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script>
+    function display_confirm_modal() {
+        console.log('ok');
+        var x = document.getElementById("confirm-modal");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
